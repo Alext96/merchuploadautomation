@@ -1,6 +1,16 @@
 import pyautogui
 
-whatToDo = input("upload(u) or color(c) or saveshirts(s)")
+whatToDo = input("newtab(n), upload(u), saveshirts(s) color(c)")
+
+
+def new_tab():
+    for x in range(50):
+        pyautogui.hotkey('ctrl', 't')
+        pyautogui.hotkey('ctrl', 'v')
+        pyautogui.press("enter")
+        x += 1
+    else:
+        print("done")
 
 
 # loop
@@ -26,7 +36,7 @@ def upload():
         print("done")
 
 
-def saveshirts():
+def save_shirts():
     for x in range(50):
         pyautogui.click(1466, 1368, interval=0.5)
         pyautogui.hotkey("ctrl", "tab", interval=0.5)
@@ -57,4 +67,7 @@ if whatToDo == "c":
     color()
 
 if whatToDo == "s":
-    saveshirts()
+    save_shirts()
+
+if whatToDo == "n":
+    new_tab()
